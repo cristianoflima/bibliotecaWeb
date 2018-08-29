@@ -1,0 +1,97 @@
+<div class="bg-light">
+	<div class="tituloPrincipal">
+		<img id="logo" src="images/logoCadastro.jpeg" width="50px"
+			height="50px" />
+		<h1>Cadastro de Usuário</h1>
+	</div>
+	<div class="container">
+		<div class="center-form">
+			<form class="needs-validation" name="formCadUsuario" ng-submit="salvar()">
+
+				<!--INICIO DADOS DO USUARIO DE ACESSO   -->
+				<div class="blocosCadastrais">
+					<h3>Dados do usuário</h3>
+					<div class="form-group">
+						<div class="row">
+							<div class="col col-sm-6">
+								<label for="email">Email*</label> 
+								<input type="email" class="form-control" id="email" name="email" ng-model="usuario.email" placeholder="email@exemplo.com.br" required/>
+							</div>
+							<div class="col col-sm-6">
+								<label for="emailConfirmation">Cofirmação de email*</label> <input
+									type="email" class="form-control" id="emailConfirmacao" ng-model="emailConfirmacao" placeholder="Repetir email" required/>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col col-sm-6">
+								<label for="password">Senha*</label> <input type="password"
+									class="form-control" id="senha" ng-model="senha" minlength="6" maxlength="15" placeholder="De 6 a 15 dígitos" required/>
+							</div>
+							<div class="col col-sm-6">
+								<label for="passwordConfirmation">Cofirmação de senha*</label> <input
+									type="password" class="form-control" id="senhaConfirmacao"  ng-model="senhaConfirmacao" minlength="6" maxlength="15" placeholder="Repita senha" required/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--FIM DADOS DO USUARIO DE ACESSO  -->
+				
+				<!--INICIO DADOS CADASTRAIS  -->
+				<div class="blocosCadastrais">
+					<h3>Dados do cadastrais</h3>
+					<div class="form-group">
+						<div class="row">
+							<div class="col col-sm-8">
+								<input type="text" class="form-control" id="nome"  ng-model="usuario.nome"	maxlength="45" placeholder="Nome completo*" required/>
+							</div>
+							<div class="col col-sm-4">
+								<input type="text" class="form-control" id="fone"  ng-model="usuario.fone"	maxlength="14" placeholder="Telefone com DDD e sem o zero*" required/>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col col-sm-8">
+								<input type="text" class="form-control" id="logradouro" ng-model="usuario.logradouro" maxlength="50" placeholder="Rua/Av/Travessa* " required/>
+							</div>
+							<div class="col col-sm-2">
+								<input type="number" class="form-control" id="numero" ng-model="usuario.numero" placeholder="nº*" required/>
+							</div>
+							<div class="col col-sm-2">
+								<input type="text" class="form-control" id="complemento" ng-model="usuario.complemento" maxlength="45" placeholder="Compl."/>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col col-sm-4">
+								<input type="text" class="form-control" id="bairro" ng-model="usuario.bairro"  maxlength="50" placeholder="Bairro*" required/>
+							</div>
+							<div class="col col-sm-4">
+								<input type="number" class="form-control" id="cep" ng-model="usuario.cep" maxlength="8" placeholder="CEP*" required/>
+							</div>
+							<div class="col col-sm-2">
+								<input type="text" class="form-control" id="cidade" ng-model="usuario.cidade" maxlength="20" placeholder="Cidade*" required/>
+							</div>
+							<div class="col col-sm-2">
+<!-- 								<input type="text" class="form-control upCase" id="uf" ng-model="usuario.uf" maxlength="2" placeholder="UF*" required/> -->
+								<select class="form-control" ng-options="uf as uf.sigla for uf in ufs track by uf.sigla" ng-model="uf" required></select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="formCadUsuario.$invalid">Cadastrar</button>
+					<a class="btn btn-lg btn-danger btn-block mt10" href="/">Cancelar</a>
+				</div>
+				<!--FIM DADOS CADASTRAIS  -->
+			</form>
+			
+		</div>
+	</div>
+</div>

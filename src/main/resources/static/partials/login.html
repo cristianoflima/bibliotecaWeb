@@ -1,0 +1,20 @@
+<form class="form-signin tac">
+
+	<img src="images/logo.png" class="imgLogo" />
+
+	<div ng-show="logoutSucesso">
+		<h5 class="messageSuccess">Logout realizado com sucesso, até logo!</h5>
+	</div>
+	<div ng-show="loginFalhou">
+		<h5 class="messageError">Erro ao realizar Login</h5>
+	</div>
+
+	<input type="text" name="username"	placeholder="Digite seu email" class="form-control" /> 
+	
+	<input type="password" name="password"	placeholder="Senha" class="form-control" />
+
+	<button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+	<a href="/cadUsuario" class="">Cadastrar</a>
+	<p class="mt-5 mb-3 text-muted">@ 2017-2018</p>
+
+</form>
